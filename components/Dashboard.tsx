@@ -19,7 +19,8 @@ const Dashboard_Overview: React.FC = async () => {
       try {
         const data = await getTSEsForToken(item.creditClientId);
         return data?.length ? data : null;
-      } catch (_) {
+      } catch (error) {
+        console.error("Error fetching TSEs for token:", error);
         return null;
       }
     })
@@ -34,7 +35,8 @@ const Dashboard_Overview: React.FC = async () => {
         try {
           const detail = await getTSEsTokenData(tseSerialNumber);
           return { creditClientId, tseSerialNumber, detail };
-        } catch (_) {
+        } catch (error) {
+          console.error("Error fetching TSE data:", error);
           return null;
         }
       })
