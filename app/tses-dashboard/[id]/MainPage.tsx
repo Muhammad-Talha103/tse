@@ -279,7 +279,6 @@ function StatCard({
   value,
   total,
   percentage,
-  icon,
   color,
 }: StatCardProps) {
   return (

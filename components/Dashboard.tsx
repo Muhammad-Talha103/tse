@@ -19,7 +19,7 @@ const Dashboard_Overview: React.FC = async () => {
       try {
         const data = await getTSEsForToken(item.creditClientId);
         return data?.length ? data : null;
-      } catch (error) {
+      } catch (_) {
         return null;
       }
     })
@@ -34,7 +34,7 @@ const Dashboard_Overview: React.FC = async () => {
         try {
           const detail = await getTSEsTokenData(tseSerialNumber);
           return { creditClientId, tseSerialNumber, detail };
-        } catch (error) {
+        } catch (_) {
           return null;
         }
       })
